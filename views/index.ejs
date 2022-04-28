@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/sytle.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section id="pokemom">
+        <% pokedex.forEach(element => { %>
+          <a href="/detalhes/<%= element.id %> ">
+        <article class="card">
+          <div class="card_image">
+            <img src="<%= element.img %> " alt="<%= element.nome %> " />
+          </div>
+          <div class="descricao__do__pokemom">
+            <div><%=element.nome %></div>
+            <div><%=element.tipo %></div>
+        
+          </div>
+        </article>
+        </a>
+        <% }); %>
+      </section>
+    </main> 
+     <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
