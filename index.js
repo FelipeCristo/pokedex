@@ -64,7 +64,7 @@ let pokedex = [
 
 app.get("/", (req, res) => {
   setTimeout(() => {
-    message = "Bem vindo";
+    message = "";
   }, 1000);
   res.render("index.ejs", {
     pokedex, message

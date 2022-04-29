@@ -15,7 +15,7 @@ header{
     align-items: center;
     height: 10%;
     background-color: red;
-
+    border: 10px
 }
 
 header a{
@@ -53,13 +53,29 @@ section#detalhes{
     align-items: center;
 }
 
+.img{
+  display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.imgDetalhes{
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+
 table{
-    width: 1000px;
+    width: 500px;
     text-align: center;
+    padding: 10px;
+  
 }
 
 table td{
     border: 1px solid red;
+    padding: 3px;
 }
 
 table tr:nth-child(odd){
