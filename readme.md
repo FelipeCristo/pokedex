@@ -15,9 +15,7 @@
 
 <br>
 
-<p align="center">
-  <img alt="dev.pokédex" src="" width="100%">
-</p>
+
 
 ## 🚀 Tecnologias
 
