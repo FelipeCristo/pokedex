@@ -3,7 +3,7 @@ import path from "path";
 import dotEnv from 'dotenv'
 
 
-
+dotEnv.config();
 const __dirname = path.resolve(path.dirname(""));
 const PORT=process.env.PORT || 3001;
 
