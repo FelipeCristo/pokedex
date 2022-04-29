@@ -3,7 +3,10 @@ import path from "path";
 
 const __dirname = path.resolve(path.dirname(""));
 
+
 const app = express();
+app.use(express.urlencoded({extended: true})); // O corpo (body) da requisição
+app.use(express.json()); // converter para JSON
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
@@ -11,6 +14,8 @@ const port = 3001;
 app.listen(port, () => {
   console.log(`Rodando na porta ${port}`);
 });
+
+let message;
 
 let pokedex = [
   {
@@ -23,7 +28,7 @@ let pokedex = [
     categoria:'Seed',
     habilidade:'Superar',
     descricao:"Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente",
-    img: "https://www.pngmart.com/files/11/Pokemon-Bulbasaur-PNG-Pic.png",
+    img:"https://www.pngmart.com/files/11/Pokemon-Bulbasaur-PNG-Pic.png",
   },
   {
     id: 2,
@@ -54,8 +59,11 @@ let pokedex = [
 ];
 
 app.get("/", (req, res) => {
+  setTimeout(() => {
+    message = "Bem vindo";
+  }, 1000);
   res.render("index.ejs", {
-    pokedex,
+    pokedex, message
   });
 });
 
@@ -64,10 +72,23 @@ app.get("/detalhes/:id", (req, res) => {
   pokedex.filter((element) =>{
     if( element.id == req.params.id){
       pokemons = element
-    }
-      
-  })
+    } 
+  });
   res.render("detalhes.ejs",{
-    pokemons
+    pokemons, message
   }); 
+});
+
+app.get('/cadastro', (req, res) => {
+  res.render('cadastro.ejs', {
+      message
+  });
+});
+
+app.post('/cadastro', (req, res) => {
+  const value = pokedex[pokedex.length-1].id + 1;
+  const {numero,nome,tipo,altura,peso,categoria,habilidade,descricao,img} = req.body;
+  pokedex.push({id: value,numero,nome,tipo,altura,peso,categoria,habilidade,descricao,img});
+  message = `Pokémon cadastrado!`;
+  res.redirect("/");
 });

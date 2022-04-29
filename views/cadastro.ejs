@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sytle.css" />
+    <title>Pokedex</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <section id="register">
+        <h2>Register a new Pokemon:</h2>
+        <form action="/cadastro" method="post">
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" name="numero" placeholder="Enter pokemon number" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Enter pokemon name" required>
+            <label for="tipo">Type:</label>
+            <input type="text" id="tipo" name="tipo" placeholder="Enter pokemon type" required>
+            <label for="img">Link for picture:</label>
+            <input type="url" id="img" name="img" placeholder="Enter url pokemon picture" required>
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Enter pokemon description" required>
+            <label for="altura">Altura</label>
+            <input type="text" id="altura" name="altura" placeholder="Enter pokemon height" required>
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso" placeholder="Enter pokemon weight" required>
+            <label for="categoria">Categoria:</label>
+            <input type="text" id="categoria" name="categoria" placeholder="Enter pokemon category" required>
+            <label for="habilidade">Habilidade:</label>
+            <input type="text" id="habilidade" name="habilidade" placeholder="Enter pokemon ability" required>
+            <button id="buttonAdd" type="submit">Enviar</button>
+        </form>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+</body>
+<script src="/js/script.js"></script>
+</html>

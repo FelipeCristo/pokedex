@@ -1,4 +1,4 @@
-# Cavaleiros do Zoodíaco
+# Pokedex
 
 ## Descrição
 Este projeto foi realizado com dins de aprendizado nop curso de FullStack da BlueEdTech no ano de 2022 - modulo 2

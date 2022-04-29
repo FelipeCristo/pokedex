@@ -12,7 +12,7 @@
     <main>
         <section id="detalhes">
         <h1> <%= pokemons.nome %> </h1>
-        <img <%= pokemons.img %>> </img>
+        <img src=<%= pokemons.img %>> </img>
         <table>
         <thead>
           <td colspan="2">Detalhes</td>  
@@ -50,8 +50,6 @@
                 <td>Habilidades</td>
                 <td><%=pokemons.habilidade%></td>
             </tr>
-
-
         </tbody>
         <tfoot></tfoot>
         </table>
@@ -59,4 +57,5 @@
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>
+<script src="/js/script.js"></script>
 </html>

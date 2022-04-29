@@ -114,3 +114,96 @@ footer{
   
 }
 
+/* style mensage confirmation */
+
+section#message {
+    padding: 1.5rem;
+    background-color: rgb(197, 255, 214);
+    color: #004d04;
+    position: fixed;
+    /* top: 3rem; */
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  span#close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+  
+  span#close:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.5);
+  }
+
+  /* cadastro */
+
+  section#register {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+}
+  
+  section#register img {
+    width: 100%;
+  }
+  
+  section#register h2 {
+    width:100%;
+    text-align: center;
+    padding-bottom:2rem;
+    color: rgb(109, 109, 109);
+  }
+  
+  section#register form {
+    width:50%;
+    display: flex;
+    flex-direction: column;    
+  }
+  
+  section#register form input {
+    width: 96.6%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    outline: none;
+    /* border: solid 2px rgb(197, 197, 197); */
+  }
+  
+  section#register form label {
+    margin: 1rem 0 0 0;
+    /* color: rgb(148, 148, 148); */
+    align-self: flex-start;
+  }
+  
+  section#register form button {
+    padding: 0.6rem;
+    min-width: 5rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px rgb(109, 109, 109);
+    border-radius: 1rem;
+    /* color: rgb(109, 109, 109); */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  section#register form button:hover {
+    background-color: brown;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
