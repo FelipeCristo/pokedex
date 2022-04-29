@@ -1,18 +1,22 @@
 import express from "express";
 import path from "path";
+import dotEnv from 'dotenv'
+
+
 
 const __dirname = path.resolve(path.dirname(""));
-
+const PORT=process.env.PORT || 3001;
 
 const app = express();
+dotEnv.config();
 app.use(express.urlencoded({extended: true})); // O corpo (body) da requisição
 app.use(express.json()); // converter para JSON
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-const port = 3001;
-app.listen(port, () => {
-  console.log(`Rodando na porta ${port}`);
+
+app.listen(PORT, () => {
+  console.log(`Rodando na porta ${PORT}`);
 });
 
 let message;
